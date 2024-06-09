@@ -1,0 +1,9 @@
+services:
+  apache:
+    container_name: apache # кастомное имя для удобства
+    image: php:apache # образ php с установленным apache
+    restart: unless-stopped # устанавливаем политику перезапуска контейнера
+    ports:
+      - "80:80" # проброс портов
+    volumes:
+      - ./data:/var/www/html # монтируем папку с html файлами в контейнер
